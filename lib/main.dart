@@ -17,9 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (context) => ProviderPages(),),
-      ],
+      providers: [ChangeNotifierProvider(create: (context) => ProviderPages())],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
@@ -28,7 +26,7 @@ class MyApp extends StatelessWidget {
           visualDensity: VisualDensity.adaptivePlatformDensity,
           textTheme: GoogleFonts.mulishTextTheme(),
         ),
-        home:SplashScreen(),
+        home: SplashScreen(),
       ),
     );
   }
