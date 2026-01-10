@@ -22,11 +22,10 @@ class ProviderPages with ChangeNotifier{
     SharedPreferences pref = await SharedPreferences.getInstance();
     bool? isRegister = pref.getBool('isLogin');
     if(isRegister != null && isRegister){
-      Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(),),
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen(),),
       );
     }else{
-      Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const LoginScreen(),),
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const LoginScreen(),),
 
       );
     }

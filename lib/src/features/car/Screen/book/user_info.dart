@@ -54,14 +54,14 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                   _textField(
                     controller: nameCtrl,
                     label: "Name",
-                    hint: "Ex. John",
+                    hint: "User Name",
                   ),
 
                   const SizedBox(height: 16),
 
                   _textField(
                     controller: emailCtrl,
-                    label: "Email",
+                    label: "User Email",
                     hint: "example@gmail.com",
                     keyboardType: TextInputType.emailAddress,
                   ),
