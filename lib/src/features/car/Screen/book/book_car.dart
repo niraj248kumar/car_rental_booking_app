@@ -2,6 +2,8 @@ import 'package:car_rental_booking/src/features/car/Screen/book/user_info.dart';
 import 'package:car_rental_booking/src/features/car/data/datas.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../core/CRB_color.dart';
+
 class BookCarScreen extends StatefulWidget {
   final Car car;
   const BookCarScreen({super.key, required this.car});
@@ -22,11 +24,11 @@ class _BookCarScreenState extends State<BookCarScreen> {
     final car = widget.car;
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor:CRBService.kcWhite,
       appBar: AppBar(
         title: const Text("Book Car"),
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
+        backgroundColor: CRBService.kcWhite,
+        foregroundColor: CRBService.kcBlack,
         elevation: 0,
       ),
       body: SingleChildScrollView(
@@ -50,7 +52,7 @@ class _BookCarScreenState extends State<BookCarScreen> {
                 style:
                 const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             Text("Rs.${car.price}/hr",
-                style: const TextStyle(color: Colors.blue)),
+                style: TextStyle(color:CRBService.kcBlue)),
 
             const SizedBox(height: 20),
             _rentType(),
@@ -61,11 +63,11 @@ class _BookCarScreenState extends State<BookCarScreen> {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+                style: ElevatedButton.styleFrom(backgroundColor: CRBService.kcBlue),
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => UserInfoScreen(),));
                 },
-                child: const Text("Continue",style: TextStyle(color: Colors.white),),
+                child:Text("Continue",style: TextStyle(color: CRBService.kcWhite),),
               ),
             )
           ],
@@ -97,11 +99,11 @@ class _BookCarScreenState extends State<BookCarScreen> {
           ],
         ),
         if (!isSelfDriver)
-          const Padding(
+           Padding(
             padding: EdgeInsets.only(top: 6),
             child: Text(
               "Additional Rs.1500 driver charge",
-              style: TextStyle(fontSize: 12, color: Colors.grey),
+              style: TextStyle(fontSize: 12, color:CRBService.kcGrey),
             ),
           )
       ],
@@ -114,14 +116,14 @@ class _BookCarScreenState extends State<BookCarScreen> {
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 12),
         decoration: BoxDecoration(
-          color: selected ? Colors.blue : Colors.grey.shade200,
+          color: selected ? CRBService.kcBlue : CRBService.kcGrey,
           borderRadius: BorderRadius.circular(30),
         ),
         alignment: Alignment.center,
         child: Text(
           title,
           style: TextStyle(
-              color: selected ? Colors.white : Colors.black,
+              color: selected ?CRBService.kcWhite : CRBService.kcBlack,
               fontWeight: FontWeight.w600),
         ),
       ),

@@ -2,6 +2,8 @@ import 'package:car_rental_booking/src/features/car/Screen/home/home_screen.dart
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+import '../../../../../core/CRB_color.dart';
+
 class UserInfoScreen extends StatefulWidget {
   const UserInfoScreen({super.key});
 
@@ -25,11 +27,11 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
 
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor:CRBService.kcWhite,
         appBar: AppBar(
           title: const Text("User Info Screen"),
-          backgroundColor: Colors.white,
-          foregroundColor: Colors.black,
+          backgroundColor:  CRBService.kcWhite,
+          foregroundColor: CRBService.kcBlack,
           elevation: 0,
           leading: const BackButton(),
         ),
@@ -109,7 +111,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
             height: 50,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue,
+                backgroundColor:  CRBService.kcBlue,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30),
                 ),
@@ -121,9 +123,9 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                   Fluttertoast.showToast(msg: 'Booking Success');
                 }
               },
-              child: const Text(
+              child:  Text(
                 "Continue",
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold,color: Colors.white),
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold,color:  CRBService.kcWhite),
               ),
             ),
           ),

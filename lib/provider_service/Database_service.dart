@@ -9,8 +9,6 @@ class ProviderPages with ChangeNotifier {
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-  TextEditingController insertDataController = TextEditingController();
-  TextEditingController updateName = TextEditingController();
   bool isLogin = false;
 
   List<String> itemList = [];

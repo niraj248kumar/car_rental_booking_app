@@ -2,6 +2,7 @@ import 'package:car_rental_booking/provider_service/Database_service.dart';
 import 'package:car_rental_booking/src/register/sing_up_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../core/CRB_color.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -22,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
     final double w = size.width;
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: CRBService.kcWhite,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -32,8 +33,6 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
 
                 SizedBox(height: h * 0.07),
-
-                /// Title
                 Text(
                   'Use Login',
                   style: TextStyle(
@@ -49,7 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   'Welcome! Please Login to your account',
                   style: TextStyle(
                     fontSize: 16,
-                    color: Colors.black,
+                    color: CRBService.kcBlack,
                   ),
                 ),
 
@@ -96,7 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     'Forgot Password?',
                     style: TextStyle(
                       fontSize: w * 0.035,
-                      color: Colors.blue,
+                      color: CRBService.kcBlue,
                     ),
                   ),
                 ),
@@ -109,7 +108,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: h * 0.065,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue,
+                      backgroundColor:CRBService.kcBlue,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(w * 0.03),
                       ),
@@ -119,7 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     },
                     child: Text(
                       'Login',
-                      style: TextStyle(fontSize: w * 0.045,fontWeight: FontWeight.bold,color: Colors.white),
+                      style: TextStyle(fontSize: w * 0.045,fontWeight: FontWeight.bold,color: CRBService.kcWhite),
                     ),
                   ),
                 ),
@@ -130,7 +129,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 Text(
                   '- or sign in with -',
                   style: TextStyle(
-                    color: Colors.grey,
+                    color: CRBService.kcGrey,
                     fontSize: w * 0.035,
                   ),
                 ),
@@ -154,7 +153,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         'Sign Up',
                         style: TextStyle(
                           fontSize: w * 0.035,
-                          color: Colors.blue,
+                          color: CRBService.kcBlue,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -180,7 +179,7 @@ class _LoginScreenState extends State<LoginScreen> {
         style: TextStyle(
           fontSize: w * 0.04,
           fontWeight: FontWeight.bold,
-          color: Colors.black
+          color: CRBService.kcBlack
         ),
       ),
     );

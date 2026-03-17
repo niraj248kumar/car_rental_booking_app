@@ -1,7 +1,6 @@
 import 'package:car_rental_booking/src/features/car/Screen/book/book_car.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../constraints/colors.dart';
+import '../../../../../core/CRB_color.dart';
 import '../../data/datas.dart';
 
 class BookCar extends StatefulWidget {
@@ -20,7 +19,7 @@ class _BookCarState extends State<BookCar> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: CRBService.kcWhite,
         body: SafeArea(
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -46,16 +45,16 @@ class _BookCarState extends State<BookCar> {
                                 height: 45,
                                 width: 45,
                                 decoration: BoxDecoration(
-                                  color: Colors.white,
+                                  color: CRBService.kcWhite,
                                   borderRadius: BorderRadius.circular(16),
                                   border: Border.all(
-                                    color: Colors.grey[300]!,
+                                    color: CRBService.kcGrey,
                                     width: 1,
                                   ),
                                 ),
-                                child: const Icon(
+                                child:  Icon(
                                   Icons.keyboard_arrow_left,
-                                  color: Colors.black,
+                                  color: CRBService.kcBlack,
                                   size: 28,
                                 ),
                               ),
@@ -70,16 +69,16 @@ class _BookCarState extends State<BookCar> {
                                     height: 45,
                                     width: 45,
                                     decoration: BoxDecoration(
-                                      color: kPrimaryColor,
+                                      color: CRBService.kcBlue,
                                       borderRadius: BorderRadius.circular(15),
                                       border: Border.all(
-                                        color: Colors.grey[300]!,
+                                        color:CRBService.kcGrey,
                                         width: 1,
                                       ),
                                     ),
-                                    child: const Icon(
+                                    child:  Icon(
                                       Icons.bookmark_border,
-                                      color: Colors.white,
+                                      color: CRBService.kcWhite,
                                       size: 28,
                                     ),
                                   ),
@@ -89,16 +88,16 @@ class _BookCarState extends State<BookCar> {
                                   height: 45,
                                   width: 45,
                                   decoration: BoxDecoration(
-                                    color: Colors.white,
+                                    color:  CRBService.kcWhite,
                                     borderRadius: BorderRadius.circular(15),
                                     border: Border.all(
-                                      color: Colors.grey[300]!,
+                                      color:  CRBService.kcGrey,
                                       width: 1,
                                     ),
                                   ),
-                                  child: const Icon(
+                                  child:  Icon(
                                     Icons.share,
-                                    color: Colors.black,
+                                    color:  CRBService.kcBlack,
                                     size: 28,
                                   ),
                                 ),
@@ -109,8 +108,8 @@ class _BookCarState extends State<BookCar> {
                         const SizedBox(height: 16),
                         Text(
                           widget.car.model,
-                          style: const TextStyle(
-                            color: Colors.black,
+                          style:  TextStyle(
+                            color:  CRBService.kcBlack,
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
@@ -118,8 +117,8 @@ class _BookCarState extends State<BookCar> {
                         const SizedBox(height: 8),
                         Text(
                           widget.car.brand,
-                          style: const TextStyle(
-                            color: Colors.grey,
+                          style: TextStyle(
+                            color: CRBService.kcGrey,
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                           ),
@@ -148,8 +147,7 @@ class _BookCarState extends State<BookCar> {
                                       ),
                                     ),
                                   ),
-                            )
-                                .toList(),
+                            ).toList(),
                           ),
                         ),
                       ],
@@ -181,8 +179,8 @@ class _BookCarState extends State<BookCar> {
         ),
         bottomNavigationBar: Container(
           height: 90,
-          padding: const EdgeInsets.all(16),
-          decoration: const BoxDecoration(color: Colors.white),
+          padding:  EdgeInsets.all(16),
+          decoration:  BoxDecoration(color:CRBService.kcWhite),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -196,8 +194,8 @@ class _BookCarState extends State<BookCar> {
                       textStyle("Price"),
                       Text(
                         "Rs.${widget.car.price}/hr",
-                        style: const TextStyle(
-                          color: Colors.blueAccent,
+                        style:  TextStyle(
+                          color:  CRBService.kcBlueAccent,
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
@@ -224,16 +222,16 @@ class _BookCarState extends State<BookCar> {
                 child: Container(
                   height: 50,
                   decoration: BoxDecoration(
-                    color: kPrimaryColor,
+                    color: CRBService.kcBlue,
                     borderRadius: BorderRadius.circular(25),
                   ),
-                  child: const Center(
+                  child:  Center(
                     child: Padding(
                       padding: EdgeInsets.symmetric(horizontal: 24),
                       child: Text(
                         'Book Now',
                         style: TextStyle(
-                          color: Colors.white,
+                          color:  CRBService.kcWhite,
                           fontWeight: FontWeight.bold,
                           fontSize: 14,
                         ),
@@ -271,7 +269,7 @@ class _BookCarState extends State<BookCar> {
       height: 8,
       width: isActive ? 20 : 8,
       decoration: BoxDecoration(
-        color: isActive ? Colors.black : Colors.grey[400],
+        color: isActive ?CRBService.kcBlack :CRBService.kcGrey,
         borderRadius: BorderRadius.circular(12),
       ),
     );
@@ -283,9 +281,9 @@ class _BookCarState extends State<BookCar> {
         height: 100,
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-          color: selected ? kPrimaryColor : Colors.white,
+          color: selected ? CRBService.kcBlue : CRBService.kcWhite,
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: Colors.grey[300]!, width: selected ? 0 : 1),
+          border: Border.all(color: CRBService.kcGrey, width: selected ? 0 : 1),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -293,7 +291,7 @@ class _BookCarState extends State<BookCar> {
             Text(
               "$months months",
               style: TextStyle(
-                color: selected ? Colors.white : Colors.black,
+                color: selected ?  CRBService.kcWhite :  CRBService.kcBlack,
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
               ),
@@ -302,7 +300,7 @@ class _BookCarState extends State<BookCar> {
             Text(
               "₹$price",
               style: TextStyle(
-                color: selected ? Colors.white : Colors.black,
+                color: selected ? CRBService.kcWhite:CRBService.kcBlack,
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
@@ -319,19 +317,19 @@ class _BookCarState extends State<BookCar> {
       padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
       margin: const EdgeInsets.only(right: 16),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: CRBService.kcWhite,
         borderRadius: BorderRadius.circular(15),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(title, style: const TextStyle(color: Colors.grey, fontSize: 14)),
+          Text(title, style:  TextStyle(color:CRBService.kcGrey, fontSize: 14)),
           const SizedBox(height: 8),
           Text(
             data,
-            style: const TextStyle(
-              color: Colors.black,
+            style:  TextStyle(
+              color: CRBService.kcBlack,
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),

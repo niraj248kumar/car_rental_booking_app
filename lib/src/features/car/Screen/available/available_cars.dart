@@ -1,8 +1,9 @@
-import 'package:car_rental_booking/src/constraints/colors.dart';
 import 'package:car_rental_booking/src/features/car/Screen/book/car_details.dart';
 import 'package:car_rental_booking/src/features/car/data/datas.dart';
 import 'package:car_rental_booking/src/features/car/widget/car_widget.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../../core/CRB_color.dart';
 
 class AvailableCars extends StatefulWidget {
   const AvailableCars({super.key});
@@ -18,7 +19,7 @@ class _AvailableCarsState extends State<AvailableCars> {
 
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.grey[100],
+        backgroundColor: CRBService.kcGrey,
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -32,9 +33,9 @@ class _AvailableCarsState extends State<AvailableCars> {
                       height: 42,
                       width: 42,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color:CRBService.kcWhite,
                         borderRadius: BorderRadius.circular(14),
-                        border: Border.all(color: Colors.grey.shade300),
+                        border: Border.all(color: CRBService.kcGrey),
                       ),
                       child: const Icon(Icons.arrow_back),
                     ),
@@ -48,7 +49,7 @@ class _AvailableCarsState extends State<AvailableCars> {
               ),
             ),
 
-            /// 🚘 LIST
+
             Expanded(
               child: ListView.builder(
                 physics: const BouncingScrollPhysics(),

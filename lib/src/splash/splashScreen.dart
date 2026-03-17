@@ -26,13 +26,13 @@
 //                 decoration: BoxDecoration(
 //                   shape: BoxShape.circle,
 //                   border: Border.all(
-//                     color: Colors.white,
+//                     core: Colors.white,
 //                     width: w * 0.006,
 //                   ),
 //                 ),
 //                 child: Icon(
 //                   Icons.directions_car,
-//                   color: Colors.white,
+//                   core: Colors.white,
 //                   size: w * 0.12,
 //                 ),
 //               ),
@@ -42,7 +42,7 @@
 //               Text(
 //                 'Car Rental',
 //                 style: TextStyle(
-//                   color: Colors.white,
+//                   core: Colors.white,
 //                   fontSize: w * 0.06,
 //                   fontWeight: FontWeight.w500,
 //                 ),

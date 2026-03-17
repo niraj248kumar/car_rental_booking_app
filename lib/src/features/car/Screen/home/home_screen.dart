@@ -1,9 +1,9 @@
-import 'package:car_rental_booking/src/constraints/colors.dart';
 import 'package:car_rental_booking/src/features/car/Screen/available/available_cars.dart';
 import 'package:car_rental_booking/src/features/car/Screen/book/car_details.dart';
 import 'package:car_rental_booking/src/features/car/data/datas.dart';
 import 'package:car_rental_booking/src/features/car/widget/car_widget.dart';
 import 'package:flutter/material.dart';
+import '../../../../../core/CRB_color.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final w = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      backgroundColor: Colors.grey.shade100,
+      backgroundColor:CRBService.kcGrey,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
               height: h * 0.22,
               padding: EdgeInsets.symmetric(horizontal: w * 0.05),
               decoration: BoxDecoration(
-                color: Colors.blue,
+                color:  CRBService.kcBlue,
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(30),
                   bottomRight: Radius.circular(30),
@@ -49,11 +49,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
+                        children:  [
                           Text(
                             "Location",
                             style: TextStyle(
-                              color: Colors.white70,
+                              color:  CRBService.kcWhite,
                               fontSize: 13,
                             ),
                           ),
@@ -61,12 +61,12 @@ class _HomeScreenState extends State<HomeScreen> {
                           Row(
                             children: [
                               Icon(Icons.location_on,
-                                  color: Colors.white, size: 18),
+                                  color: CRBService.kcWhite, size: 18),
                               SizedBox(width: 4),
                               Text(
                                 "Patna, Bihar, India",
                                 style: TextStyle(
-                                  color: Colors.white,
+                                  color: CRBService.kcWhite,
                                   fontSize: 16,
                                   fontWeight: FontWeight.w600,
                                 ),
@@ -83,8 +83,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           color: Colors.white.withOpacity(0.25),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: const Icon(Icons.notifications,
-                            color: Colors.white),
+                        child:  Icon(Icons.notifications,
+                            color: CRBService.kcWhite),
                       ),
                     ],
                   ),
@@ -96,21 +96,21 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: 50,
                     padding: const EdgeInsets.symmetric(horizontal: 16),
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: CRBService.kcWhite,
                       borderRadius: BorderRadius.circular(14),
                     ),
                     child: Row(
-                      children: const [
-                        Icon(Icons.search, color: Colors.grey),
+                      children:  [
+                        Icon(Icons.search, color:CRBService.kcGrey),
                         SizedBox(width: 10),
                         Expanded(
                           child: Text(
                             "Enter your location",
-                            style: TextStyle(color: Colors.grey),
+                            style: TextStyle(color: CRBService.kcGrey),
                           ),
                         ),
                         Icon(Icons.filter_alt_outlined,
-                            color: Colors.blue),
+                            color: CRBService.kcBlue),
                       ],
                     ),
                   ),
@@ -148,7 +148,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: Colors.grey[600],
+                      color: CRBService.kcGrey,
                     ),
                   ),
                   InkWell(
@@ -167,14 +167,14 @@ class _HomeScreenState extends State<HomeScreen> {
                           style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
-                            color: kPrimaryColor,
+                            color: CRBService.kcBlue,
                           ),
                         ),
                         const SizedBox(width: 8),
                         Icon(
                           Icons.arrow_forward_ios,
                           size: 12,
-                          color: kPrimaryColor,
+                          color: CRBService.kcBlue,
                         )
                       ],
                     ),
@@ -214,8 +214,8 @@ class _HomeScreenState extends State<HomeScreen> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedIndex,
         onTap: (i) => setState(() => selectedIndex = i),
-        selectedItemColor: Colors.blue,
-        unselectedItemColor: Colors.grey,
+        selectedItemColor: CRBService.kcBlue,
+        unselectedItemColor: CRBService.kcBlack,
         items: const [
           BottomNavigationBarItem(
               icon: Icon(Icons.home), label: "Home"),
@@ -242,8 +242,8 @@ class _HomeScreenState extends State<HomeScreen> {
             style: const TextStyle(
                 fontSize: 18, fontWeight: FontWeight.bold),
           ),
-          const Text("See all",
-              style: TextStyle(color: Colors.blue)),
+           Text("See all",
+              style: TextStyle(color: CRBService.kcBlue)),
         ],
       ),
     );
@@ -260,8 +260,8 @@ class _HomeScreenState extends State<HomeScreen> {
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: Colors.white,
-            border: Border.all(color: Colors.grey.shade300),
+            color: CRBService.kcWhite,
+            border: Border.all(color: CRBService.kcGrey),
           ),
           child: Image.asset(image),
         ),

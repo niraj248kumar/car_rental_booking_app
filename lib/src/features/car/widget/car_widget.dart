@@ -1,5 +1,6 @@
 import 'package:car_rental_booking/src/features/car/data/datas.dart';
 import 'package:flutter/material.dart';
+import '../../../../core/CRB_color.dart';
 
 Widget buildCar(Car car, int? index) {
   return Padding(
@@ -8,7 +9,7 @@ Widget buildCar(Car car, int? index) {
       elevation: 5,
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: CRBService.kcWhite,
           borderRadius: BorderRadius.circular(10),
           boxShadow: [
             BoxShadow(
@@ -30,17 +31,13 @@ Widget buildCar(Car car, int? index) {
                   child: Container(
                     height: 160,
                     width: double.infinity,
-                    color: Colors.grey.shade100,
+                    color: CRBService.kcGrey,
                     child: Hero(
                       tag: car.model,
-                      child: Image.asset(
-                        car.images[0],
-                        fit: BoxFit.contain,
-                      ),
+                      child: Image.asset(car.images[0], fit: BoxFit.contain),
                     ),
                   ),
                 ),
-
               ],
             ),
             Padding(
@@ -50,17 +47,20 @@ Widget buildCar(Car car, int? index) {
                 children: [
                   Container(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 8, vertical: 4),
+                      horizontal: 8,
+                      vertical: 4,
+                    ),
                     decoration: BoxDecoration(
                       color: Colors.blue.withOpacity(0.1),
                       borderRadius: BorderRadius.circular(6),
                     ),
-                    child:  Text(
-                         car.brand,
+                    child: Text(
+                      car.brand,
                       style: TextStyle(
-                          color: Colors.blue,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w600),
+                        color: CRBService.kcBlue,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
 
@@ -78,8 +78,8 @@ Widget buildCar(Car car, int? index) {
                       ),
                       Text(
                         "Rs.${car.price}/hr",
-                        style: const TextStyle(
-                          color: Colors.blue,
+                        style: TextStyle(
+                          color: CRBService.kcBlue,
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
@@ -88,19 +88,16 @@ Widget buildCar(Car car, int? index) {
                   ),
 
                   const SizedBox(height: 10),
-                  Divider(color: Colors.grey.shade300),
+                  Divider(color: CRBService.kcGrey),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const _FeatureItem(
-                        icon: Icons.settings,
-                        title: "Manual",
-                      ),
+                      const _FeatureItem(icon: Icons.settings, title: "Manual"),
                       _FeatureItem(
                         icon: Icons.local_gas_station,
                         title: car.fuelType,
                       ),
-                       _FeatureItem(
+                      _FeatureItem(
                         icon: Icons.people,
                         title: "${car.seats} Seats",
                       ),
@@ -120,26 +117,19 @@ class _FeatureItem extends StatelessWidget {
   final IconData icon;
   final String title;
 
-  const _FeatureItem({
-    required this.icon,
-    required this.title,
-  });
+  const _FeatureItem({required this.icon, required this.title});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Icon(icon, size: 18, color: Colors.blue),
+        Icon(icon, size: 18, color: CRBService.kcBlue),
         const SizedBox(width: 6),
         Text(
           title,
-          style: const TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.w500,
-          ),
+          style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
         ),
       ],
     );
   }
 }
-

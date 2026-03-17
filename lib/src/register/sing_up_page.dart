@@ -1,7 +1,7 @@
 import 'package:car_rental_booking/src/register/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
+import '../../core/CRB_color.dart';
 import '../../provider_service/Database_service.dart';
 
 class SignupScreen extends StatefulWidget {
@@ -21,7 +21,7 @@ class _SignupScreenState extends State<SignupScreen> {
     final double w = size.width;
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: CRBService.kcWhite,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -46,7 +46,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: w * 0.055,
-                    color: Colors.black,
+                    color: CRBService.kcBlack,
                   ),
                 ),
 
@@ -75,7 +75,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         isPasswordVisible
                             ? Icons.visibility
                             : Icons.visibility_off,
-                        color: Colors.grey,
+                        color: CRBService.kcGrey,
                       ),
                       onPressed: () {
                         setState(() {
@@ -97,7 +97,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   height: h * 0.065,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue,
+                      backgroundColor: CRBService.kcBlue,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(w * 0.03),
                       ),
@@ -107,7 +107,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     },
                     child: Text(
                       'Sign Up',
-                      style: TextStyle(fontSize: w * 0.045,color: Colors.white,fontWeight: FontWeight.bold),
+                      style: TextStyle(fontSize: w * 0.045,color: CRBService.kcWhite,fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
@@ -117,7 +117,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 /// Divider text
                 Text(
                   '- or sign up with -',
-                  style: TextStyle(color: Colors.grey, fontSize: w * 0.045),
+                  style: TextStyle(color: CRBService.kcBlue, fontSize: w * 0.045),
                 ),
 
                 /// Sign In
@@ -136,7 +136,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         'Login',
                         style: TextStyle(
                           fontSize: w * 0.035,
-                          color: Colors.blue,
+                          color: CRBService.kcBlue,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -162,7 +162,7 @@ class _SignupScreenState extends State<SignupScreen> {
         style: TextStyle(
           fontSize: w * 0.06,
           fontWeight: FontWeight.bold,
-          color: Colors.black
+          color: CRBService.kcBlack
         ),
       ),
     );
@@ -174,15 +174,15 @@ class _SignupScreenState extends State<SignupScreen> {
         hintText: hint,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: const BorderSide(
-            color: Colors.grey,
+          borderSide: BorderSide(
+            color: CRBService.kcGrey,
             width: 1,
           ),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: const BorderSide(
-            color: Colors.grey,
+          borderSide:  BorderSide(
+            color: CRBService.kcGrey,
             width: 1,
           ),
         ),
